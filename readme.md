@@ -4,7 +4,7 @@ As an Android development, I connected my device to debug through an app name "w
 # Usage
 ![](https://github.com/JuwanZhu/AndroidWifiDebugForWindows/blob/master/Demo/1.jpg)
 
-![](https://github.com/JuwanZhu/AndroidWifiDebugForWindows/blob/master/Demo/1.jpg)
+![](https://github.com/JuwanZhu/AndroidWifiDebugForWindows/blob/master/Demo/2.jpg)
 
 # Development Environment
 ## IDE: Visual Studio 2013
