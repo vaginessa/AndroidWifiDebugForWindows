@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.mComBoBoxIpList = new System.Windows.Forms.ComboBox();
             this.mButtonConnect = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -61,6 +62,7 @@
             this.ClientSize = new System.Drawing.Size(288, 163);
             this.Controls.Add(this.mButtonConnect);
             this.Controls.Add(this.mComBoBoxIpList);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Android Wifi Debug";
