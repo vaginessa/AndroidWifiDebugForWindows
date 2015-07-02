@@ -32,11 +32,13 @@
             this.mButtonConnect = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // mConBoBoxIpList
+            // mComBoBoxIpList
             // 
+            this.mComBoBoxIpList.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.mComBoBoxIpList.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.mComBoBoxIpList.FormattingEnabled = true;
             this.mComBoBoxIpList.Location = new System.Drawing.Point(13, 12);
-            this.mComBoBoxIpList.Name = "mConBoBoxIpList";
+            this.mComBoBoxIpList.Name = "mComBoBoxIpList";
             this.mComBoBoxIpList.Size = new System.Drawing.Size(263, 21);
             this.mComBoBoxIpList.TabIndex = 0;
             // 
