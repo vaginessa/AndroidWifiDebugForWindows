@@ -196,4 +196,4 @@ FakesAssemblies/
 *.opt
 
 # add exe file
-!bin/Debug/AndroidWifiDebug.exe
+!/bin/Debug/AndroidWifiDebug.exe
