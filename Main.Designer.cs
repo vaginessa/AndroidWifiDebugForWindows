@@ -28,17 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.mConBoBoxIpList = new System.Windows.Forms.ComboBox();
+            this.mComBoBoxIpList = new System.Windows.Forms.ComboBox();
             this.mButtonConnect = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // mConBoBoxIpList
             // 
-            this.mConBoBoxIpList.FormattingEnabled = true;
-            this.mConBoBoxIpList.Location = new System.Drawing.Point(13, 12);
-            this.mConBoBoxIpList.Name = "mConBoBoxIpList";
-            this.mConBoBoxIpList.Size = new System.Drawing.Size(263, 21);
-            this.mConBoBoxIpList.TabIndex = 0;
+            this.mComBoBoxIpList.FormattingEnabled = true;
+            this.mComBoBoxIpList.Location = new System.Drawing.Point(13, 12);
+            this.mComBoBoxIpList.Name = "mConBoBoxIpList";
+            this.mComBoBoxIpList.Size = new System.Drawing.Size(263, 21);
+            this.mComBoBoxIpList.TabIndex = 0;
             // 
             // mButtonConnect
             // 
@@ -54,10 +54,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
+            this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(288, 163);
             this.Controls.Add(this.mButtonConnect);
-            this.Controls.Add(this.mConBoBoxIpList);
+            this.Controls.Add(this.mComBoBoxIpList);
             this.Name = "Main";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Android Wifi Debug";
             this.Load += new System.EventHandler(this.mainLoad);
             this.ResumeLayout(false);
@@ -66,7 +69,7 @@
 
         #endregion
 
-        private System.Windows.Forms.ComboBox mConBoBoxIpList;
+        private System.Windows.Forms.ComboBox mComBoBoxIpList;
         private System.Windows.Forms.Button mButtonConnect;
     }
 }

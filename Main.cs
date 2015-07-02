@@ -21,41 +21,49 @@ namespace AndroidWifiDebug
 
         private void mainLoad(object sender, EventArgs e)
         {
-            mConfigFilePath = System.Environment.CurrentDirectory + @"\data.ini";
+            // set config file's path
+            //mConfigFilePath = System.Environment.CurrentDirectory;    // current directory
+            mConfigFilePath = Environment.GetFolderPath(System.Environment.SpecialFolder.MyDocuments) + @"\AndroidWifiDebug\Config\"; // my documents in user's home directory
+            mConfigFileName = "his.ini";
 
-            if (File.Exists(mConfigFilePath))
+            if (File.Exists(mConfigFilePath + mConfigFileName))  // if exists his.ini file, load item from his.ini file
             {
-                StreamReader sr = new StreamReader(mConfigFilePath, Encoding.Default);
+                StreamReader sr = new StreamReader(mConfigFilePath + mConfigFileName, Encoding.Default);
 
                 while (sr.Peek() > 0)
                 {
-                    mConBoBoxIpList.Items.Add(sr.ReadLine());
+                    mComBoBoxIpList.Items.Add(sr.ReadLine());
                 }
                 sr.Close();
 
-                mConBoBoxIpList.Text = (String)mConBoBoxIpList.Items[0];
+                // set recently ip to comBoBox
+                mComBoBoxIpList.Text = (String)mComBoBoxIpList.Items[0];
+            }
+            else
+            {
+                Directory.CreateDirectory(mConfigFilePath);
             }
         }
 
         String mConfigFilePath;
+        String mConfigFileName;
         private void buttonConnectClick(object sender, EventArgs e)
         {
-            if (!mConBoBoxIpList.Items.Contains(mConBoBoxIpList.Text))
+            if (!mComBoBoxIpList.Items.Contains(mComBoBoxIpList.Text))
             {
-                mConBoBoxIpList.Items.Insert(0, mConBoBoxIpList.Text);
+                mComBoBoxIpList.Items.Insert(0, mComBoBoxIpList.Text);
             }
-            
 
             // save content of combobox to file
-            StreamWriter sw = new StreamWriter(mConfigFilePath);
-            for (int i = 0; i < mConBoBoxIpList.Items.Count; i++)
+            StreamWriter sw = new StreamWriter(mConfigFilePath + mConfigFileName);
+            for (int i = 0; i < mComBoBoxIpList.Items.Count; i++)
             {
-                sw.WriteLine(mConBoBoxIpList.Items[i]);
+                sw.WriteLine(mComBoBoxIpList.Items[i]);
             }
 
             sw.Close();
 
-            Cmd_Adb_connect(mConBoBoxIpList.Text);
+            Cmd_Adb_connect(mComBoBoxIpList.Text);
         }
 
         private void Cmd_Adb_connect(String ip)
@@ -74,6 +82,6 @@ namespace AndroidWifiDebug
             MessageBox.Show(output);
         }
 
-        
+
     }
 }
