@@ -98,7 +98,7 @@ namespace AndroidWifiDebug
             }
         }
 
-        static StringBuilder output = new StringBuilder();
+        static String output;
         static void Cmd_Adb_connect(object sender, DoWorkEventArgs args)
         {
             String ip = args.Argument.ToString();
@@ -113,13 +113,13 @@ namespace AndroidWifiDebug
             process.StandardInput.WriteLine("adb connect " + ip);
             process.StandardInput.WriteLine("exit");
 
-            output.Append(process.StandardOutput.ReadToEnd());
+            output = process.StandardOutput.ReadToEnd();
 
         }
 
         void bwRunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-            this.mTextBoxOutput.Text = output.ToString();
+            mTextBoxOutput.AppendText(output);
             mButtonConnect.UseWaitCursor = false;
         }
 
