@@ -1,5 +1,5 @@
 ﻿# Android Wifi Debug Assistant
-An Windows Application With "Wifi调试" app, connect your phone more convenient than the way like input command `adb connect 192.168.9.999` in cmd.
+An Windows Application which help you connect your "Wifi调试" app in Android phone, let you connect your phone more convenient than the way like input command `adb connect 192.168.9.999` in cmd.
 
 # Usage
 if you want to down this application directly, get it in `bin/Debug/AndroidWifiDebug.exe`
